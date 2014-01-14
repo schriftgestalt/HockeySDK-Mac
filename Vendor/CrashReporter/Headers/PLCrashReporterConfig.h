@@ -33,7 +33,7 @@
  * @ingroup enums
  * Supported mechanisms for trapping and handling crashes.
  */
-typedef NS_ENUM(NSUInteger, PLCrashReporterSignalHandlerType) {
+typedef enum /*NS_ENUM(NSUInteger, PLCrashReporterSignalHandlerType)*/ {
     /**
      * Trap fatal signals via a sigaction(2)-registered BSD signal handler.
      *
@@ -95,7 +95,7 @@ typedef NS_ENUM(NSUInteger, PLCrashReporterSignalHandlerType) {
      */
     PLCrashReporterSignalHandlerTypeMach = 1
 #endif /* PLCRASH_FEATURE_MACH_EXCEPTIONS */
-};
+} PLCrashReporterSignalHandlerType;
 
 /**
  * @ingroup enums
@@ -116,7 +116,7 @@ typedef NS_ENUM(NSUInteger, PLCrashReporterSignalHandlerType) {
  * Multiple symbolication strategies may be enabled, in which case a best-match heuristic will be applied to the
  * results.
  */
-typedef NS_OPTIONS(NSUInteger, PLCrashReporterSymbolicationStrategy) {
+typedef enum /*NS_OPTIONS(NSUInteger, PLCrashReporterSymbolicationStrategy)*/ {
     /** No symbolication. */
     PLCrashReporterSymbolicationStrategyNone = 0,
 
@@ -137,7 +137,7 @@ typedef NS_OPTIONS(NSUInteger, PLCrashReporterSymbolicationStrategy) {
      * Enable all available symbolication strategies.
      */
     PLCrashReporterSymbolicationStrategyAll = (PLCrashReporterSymbolicationStrategySymbolTable|PLCrashReporterSymbolicationStrategyObjC)
-};
+} PLCrashReporterSymbolicationStrategy;
 
 @interface PLCrashReporterConfig : NSObject {
 @private

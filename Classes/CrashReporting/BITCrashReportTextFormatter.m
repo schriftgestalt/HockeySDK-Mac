@@ -218,7 +218,8 @@ NSInteger binaryImageSort(id binary1, id binary2, void *context);
                 parentProcessName = report.processInfo.parentProcessName;
             
             /* Parent Process ID */
-            parentProcessId = [@(report.processInfo.parentProcessID) stringValue];
+
+            parentProcessId = [[NSNumber numberWithInt:report.processInfo.parentProcessID] stringValue];
         }
         
         [text appendFormat: @"Process:         %@ [%@]\n", processName, processId];

@@ -190,7 +190,7 @@
   
   if ([[bundle preferredLocalizations] count] > 0) {
     NSString *language = [[bundle preferredLocalizations] objectAtIndex:0];
-    [profileArray addObject:[NSDictionary dictionaryWithObjects:@[@"used_lang", @"Used Language", language, language] forKeys:keys]];
+    [profileArray addObject:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"used_lang", @"Used Language", language, language, nil] forKeys:keys]];
   }
   
   NSString *os_version = [[self class] systemVersionString];
